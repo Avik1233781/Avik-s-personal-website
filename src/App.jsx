@@ -94,7 +94,6 @@ links: [
         description: "A simple chatbot implemented in Python to demonstrate basic natural language processing concepts.",
         link: "https://github.com/Avik1233781/Welcome-To-Avik-Makal-s-Chatbot"
       },
-      
       {
         id: 4,
         category: "🖌️Desmos Anime Art",
@@ -218,7 +217,7 @@ links: [
           ))}
         </div>
       </section>
-      
+
       <footer className="fade-in-up delay-3">
         <p>© {new Date().getFullYear()} {portfolioData.name}. Built with React.</p>
       </footer>
