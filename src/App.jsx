@@ -174,7 +174,7 @@ function App() {
           <div className="clock-wrapper">
             <div id="live-clock">⏱ {formatTime(time)}</div>
             {/* 🌟 NEW: THE DATE DISPLAY */}
-            <div style={{ fontSize: '0.85rem', color: '#64ffda', marginTop: '4px', letterSpacing: '1px', fontWeight: '500' }}>
+            <div id="live-date" style={{ fontSize: '0.85rem', color: '#64ffda', marginTop: '4px', letterSpacing: '1px', fontWeight: '500' }}>
               {time.toLocaleDateString('en-US', { 
                 weekday: 'short', 
                 month: 'long', 
