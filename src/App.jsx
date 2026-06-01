@@ -149,7 +149,10 @@ function App() {
           </div>
         </div>
 
-        <h1>Hello, I'm <span className="highlight-text">{portfolioData.name}</span></h1>
+       {/* 🌟 WRAPPED H1 IN TYPING CONTAINER */}
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+  <h1 className="typing-container">Hello, I'm <span className="highlight-text">{portfolioData.name}</span></h1>
+</div>
         
         {/* DUAL CLOCK DISPLAY */}
         <div className="dual-clock-container">
