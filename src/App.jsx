@@ -171,29 +171,54 @@ links: [
       </section>
 
       
-{/* PROJECTS SECTION (Now Dynamic & Bug-Free!) */}
+{/* PROJECTS SECTION - WITH FORCED INLINE CSS */}
       <section className="projects-section fade-in-up delay-2">
-        <h3>My Work</h3>
+        <h3 style={{ textAlign: 'center', marginBottom: '2rem' }}>My Work</h3>
         
-        <div className="project-grid">
+        {/* THIS INLINE STYLE FORCES THE 2 COLUMNS NO MATTER WHAT */}
+        <div 
+          className="project-grid" 
+          style={{ 
+            display: 'grid', 
+            gridTemplateColumns: '1fr 1fr', 
+            gap: '1.5rem',
+            width: '100%' 
+          }}
+        >
           {portfolioData.projects.map((project) => (
-            <div className="project-card" key={project.id}>
-              {/* Displaying the category you created in your data */}
-              <span className="project-category" style={{ fontSize: '0.8rem', color: '#94a3b8', marginBottom: '0.5rem', display: 'block' }}>
+            <div 
+              className="project-card" 
+              key={project.id}
+              style={{
+                backgroundColor: '#1e293b',
+                padding: '1.5rem',
+                borderRadius: '10px',
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+            >
+              <span style={{ fontSize: '0.8rem', color: '#94a3b8', marginBottom: '0.5rem' }}>
                 {project.category}
               </span>
               
-              <h4>{project.title}</h4>
-              <p>{project.description}</p>
+              <h4 style={{ color: '#64ffda', marginBottom: '0.5rem' }}>{project.title}</h4>
+              <p style={{ color: '#94a3b8', fontSize: '0.9rem', marginBottom: '1.5rem', flexGrow: 1 }}>
+                {project.description}
+              </p>
               
-              <a href={project.link} target="_blank" rel="noreferrer" className="project-link">
+              <a 
+                href={project.link} 
+                target="_blank" 
+                rel="noreferrer" 
+                style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold', fontSize: '0.85rem' }}
+              >
                 View Project
               </a>
             </div>
           ))}
         </div>
       </section>
-
+      
       <footer className="fade-in-up delay-3">
         <p>© {new Date().getFullYear()} {portfolioData.name}. Built with React.</p>
       </footer>
