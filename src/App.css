@@ -145,7 +145,7 @@ h1 {
     text-shadow: 0 0 10px rgba(100, 255, 218, 0.4);
 }
 
-/* 4. DUAL CLOCK DISPLAY (ANALOG + DIGITAL) */
+/* Container Layout */
 .dual-clock-container {
     display: flex;
     flex-direction: column;
@@ -154,16 +154,14 @@ h1 {
     margin: 2rem 0;
 }
 
-/* FIX: Positioning container for the analog clock easter egg text */
 .interactive-clock-wrapper {
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
-    z-index: 50;
+    z-index: 40;
 }
 
-/* Analog Clock Styling */
+/* Base Clock Styling */
 .analog-clock {
     width: 140px;
     height: 140px;
@@ -174,16 +172,62 @@ h1 {
     box-shadow: 0 0 20px rgba(100, 255, 218, 0.2), inset 0 0 15px rgba(100, 255, 218, 0.1);
     backdrop-filter: blur(5px);
     cursor: pointer;
-    /* FIX: Added smooth transition for sizing mechanics */
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); 
-    z-index: 2;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* FIX: Clock Zoom Styling */
+/* 🌟 The Zoom Effect Animation */
 .analog-clock.zoom-effect {
-    transform: scale(1.3) rotate(-5deg) !important;
-    border-color: #ff007f !important; 
-    box-shadow: 0 0 35px rgba(255, 0, 127, 0.8) !important;
+    transform: scale(1.3) rotate(5deg);
+    border-color: #ff007f;
+    box-shadow: 0 0 40px rgba(255, 0, 127, 0.8), inset 0 0 15px rgba(255, 0, 127, 0.4);
+}
+
+/* Clock Hands */
+.hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    background: #e2e8f0;
+    border-radius: 10px;
+    transition: transform 0.05s cubic-bezier(0.4, 2.08, 0.55, 0.44);
+}
+
+.hour-hand { width: 6px; height: 40px; margin-left: -3px; z-index: 1; }
+.min-hand { width: 4px; height: 55px; margin-left: -2px; z-index: 2; }
+.sec-hand { width: 2px; height: 65px; margin-left: -1px; background: #64ffda; z-index: 3; }
+
+.clock-center {
+    position: absolute; top: 50%; left: 50%; width: 12px; height: 12px;
+    background: #64ffda; border-radius: 50%; transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.8); z-index: 4;
+}
+
+/* Hidden Catchy Message */
+.catchy-message {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, 20px) scale(0.5);
+    opacity: 0;
+    background: rgba(15, 23, 42, 0.95);
+    border: 2px solid #ff007f;
+    color: #ff007f;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 900;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5), 0 0 15px rgba(255, 0, 127, 0.4);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    pointer-events: none;
+    z-index: 60;
+}
+
+/* 🌟 Show Message Animation */
+.catchy-message.show-message {
+    transform: translate(-50%, 80px) scale(1);
+    opacity: 1;
 }
 
 .hand {
