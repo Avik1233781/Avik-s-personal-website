@@ -178,13 +178,7 @@ links: [
    <div className="project-card">Enzymology...</div>
    <div className="project-card">Music Video...</div>
    <div className="project-card">Chatbot...</div>
-   
-   {/* PASTE THE DESMOS CARD CODE HERE, INSIDE THE DIV */}
-   <div className="project-card">
-       <h4>Desmos Anime Art</h4>
-       <p>...</p>
-       <a href="...">View Projects</a>
-   </div>
+   <div className="project-card">Desmos Art...</div>
 </div>
 </section>
 
