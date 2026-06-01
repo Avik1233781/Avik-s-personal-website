@@ -382,26 +382,27 @@ footer {
 .project-card:nth-child(4) { transition-delay: 0.45s; }
 
 /* 🌟 TITLE TYPING ANIMATION */
-.typing-container {
-    display: inline-block;
-    overflow: hidden; /* Hides the text before it's typed */
-    white-space: nowrap; /* Keeps it on one line */
-    border-right: 4px solid #64ffda; /* The glowing cursor */
-    /* Adjust '2.5s' to make the typing faster or slower */
-    animation: typing 2.5s steps(30, end) forwards, blink 0.8s step-end infinite;
-    max-width: fit-content;
-    margin: 0 auto 0.5rem auto;
-}
+        .typing-container {
+            display: inline-block;
+            overflow: hidden; /* Hides the text before it's typed */
+            white-space: nowrap; /* Keeps it on one line */
+            border-right: 4px solid #64ffda; /* The glowing cursor */
+            /* Adjust '2.5s' to make the typing faster or slower */
+            animation: typing 2.5s steps(30, end) forwards, blink 0.8s step-end infinite;
+            max-width: fit-content;
+            margin: 0 auto 0.5rem auto;
+        }
 
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
 
-@keyframes blink {
-    from, to { border-color: transparent; }
-    50% { border-color: #64ffda; }
-}
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: #64ffda; }
+        }
+
 
 /* 📱 MOBILE RESPONSIVE STYLES */
 @media screen and (max-width: 768px) {
