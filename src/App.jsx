@@ -172,20 +172,23 @@ links: [
 
       {/* PROJECTS SECTION */}
       <section className="projects-section fade-in-up delay-2">
-        <h3>My Work</h3>
-        <div className="project-grid">
-          {portfolioData.projects.map((project) => (
-            <div key={project.id} className="project-card">
-              <h4>{project.category}</h4>
-              <p className="project-title"><strong>{project.title}</strong></p>
-              <p className="project-desc">{project.description}</p>
-              <a href={project.link} className="project-link" target="_blank" rel="noreferrer">
-                View Project
-              </a>
-            </div>
-          ))}
-        </div>
-      </section>
+  <h3>My Projects</h3>
+  <div className="project-grid">
+    
+    {/* Project 1 */}
+    <div className="project-card">...</div>
+    
+    {/* Project 2 */}
+    <div className="project-card">...</div>
+    
+    {/* Project 3 */}
+    <div className="project-card">...</div>
+    
+    {/* Project 4 */}
+    <div className="project-card">...</div>
+
+  </div>
+</section>
 
       <footer className="fade-in-up delay-3">
         <p>© {new Date().getFullYear()} {portfolioData.name}. Built with React.</p>
