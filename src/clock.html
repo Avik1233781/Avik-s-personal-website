@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Clock Animation</title>
+    <style>
+        /* Base Theme styling */
+        body {
+            background-color: #0b1120;
+            color: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .dual-clock-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .interactive-clock-wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* The Clock Body */
+        .analog-clock {
+            width: 150px;
+            height: 150px;
+            border: 3px solid #64ffda;
+            border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+            background: rgba(30, 41, 59, 0.5);
+            /* This transition makes the zoom smooth! */
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+        }
+
+        /* Clock Hands */
+        .hand {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform-origin: bottom;
+            background: #cbd5e1;
+            border-radius: 4px;
+            /* Note: We keep them centered with translateX */
+            transform: translateX(-50%) rotate(0deg); 
+        }
+
+        .hour-hand { width: 4px; height: 40px; background: #64ffda; z-index: 3; }
+        .min-hand { width: 3px; height: 55px; z-index: 2; }
+        .sec-hand { width: 2px; height: 65px; background: #f43f5e; z-index: 1; }
+
+        .clock-center {
+            width: 12px;
+            height: 12px;
+            background: #64ffda;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+
+        /* --- THE EASTER EGG ANIMATIONS --- */
+        
+        .zoom-effect {
+            transform: scale(1.25);
+            box-shadow: 0 0 30px rgba(100, 255, 218, 0.4);
+            border-color: #fff;
+        }
+
+        .catchy-message {
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            color: #64ffda;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .show-message {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dual-clock-container">
+        <div class="interactive-clock-wrapper">
+            
+            <div class="analog-clock" id="clock" title="Click the clock!">
+                <div class="hand hour-hand" id="hourHand"></div>
+                <div class="hand min-hand" id="minHand"></div>
+                <div class="hand sec-hand" id="secHand"></div>
+                <div class="clock-center"></div>
+            </div>
+            
+            <div class="catchy-message" id="clockMessage">
+                ⏳ Hurry up! Time is ticking! 🚀
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Grab the HTML elements
+        const clock = document.getElementById('clock');
+        const message = document.getElementById('clockMessage');
+        const hourHand = document.getElementById('hourHand');
+        const minHand = document.getElementById('minHand');
+        const secHand = document.getElementById('secHand');
+
+        // 1. Logic to make the clock hands move in real-time
+        function updateClock() {
+            const now = new Date();
+            
+            const seconds = now.getSeconds();
+            const secondsDegrees = (seconds * 6);
+            secHand.style.transform = `translateX(-50%) rotate(${secondsDegrees}deg)`;
+
+            const minutes = now.getMinutes();
+            const minutesDegrees = (minutes * 6) + (seconds * 0.1);
+            minHand.style.transform = `translateX(-50%) rotate(${minutesDegrees}deg)`;
+
+            const hours = now.getHours();
+            const hoursDegrees = ((hours % 12) * 30) + (minutes * 0.5);
+            hourHand.style.transform = `translateX(-50%) rotate(${hoursDegrees}deg)`;
+        }
+
+        // Run the clock update every 1 second (1000ms)
+        setInterval(updateClock, 1000);
+        updateClock(); // Run immediately on load
+
+        // 2. Logic to handle the Click Zoom effect
+        clock.addEventListener('click', () => {
+            // Add the animation classes
+            clock.classList.add('zoom-effect');
+            message.classList.add('show-message');
+
+            // Remove the animation classes after 3 seconds (3000ms)
+            setTimeout(() => {
+                clock.classList.remove('zoom-effect');
+                message.classList.remove('show-message');
+            }, 3000); 
+        });
+    </script>
+</body>
+</html>
