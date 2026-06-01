@@ -170,39 +170,29 @@ links: [
         </div>
       </section>
 
-      {/* 2. OVERWRITE YOUR WHOLE PROJECTS SECTION WITH THIS */}
-<section className="projects-section">
-  <h3>My Work</h3>
-  
-  <div className="project-grid">
-    
-    <div className="project-card">
-        <h4>Academic Research</h4>
-        <p>Enzymology & Acid Phosphatase: A detailed study on enzyme kinetics...</p>
-        <a href="#" className="project-link">View Project</a>
-    </div>
-    
-    <div className="project-card">
-        <h4>Creative Works</h4>
-        <p>"Tout Donner" Music Video: A frame by frame animation project...</p>
-        <a href="https://www.instagram.com/p/DUr7CcUEqEV/" className="project-link">Watch Video</a>
-    </div>
-    
-    <div className="project-card">
-        <h4>Software & Code</h4>
-        <p>Simple chatbot using python: A simple chatbot implemented in Python...</p>
-        <a href="https://github.com/Avik1233781/Welcome-To-Avik-Makal-s-Chatbot" className="project-link">View Code</a>
-    </div>
-    
-    <div className="project-card">
-        <h4>Desmos Anime Art</h4>
-        <p>Desmos Art Alya Draw: Creative mathematical anime art created using Desmos.</p>
-        <a href="https://www.desmos.com/calculator/0ljjyncaqv" className="project-link">View Project</a>
-    </div>
-
-  </div>
-  
-</section>
+      
+{/* PROJECTS SECTION (Now Dynamic & Bug-Free!) */}
+      <section className="projects-section fade-in-up delay-2">
+        <h3>My Work</h3>
+        
+        <div className="project-grid">
+          {portfolioData.projects.map((project) => (
+            <div className="project-card" key={project.id}>
+              {/* Displaying the category you created in your data */}
+              <span className="project-category" style={{ fontSize: '0.8rem', color: '#94a3b8', marginBottom: '0.5rem', display: 'block' }}>
+                {project.category}
+              </span>
+              
+              <h4>{project.title}</h4>
+              <p>{project.description}</p>
+              
+              <a href={project.link} target="_blank" rel="noreferrer" className="project-link">
+                View Project
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <footer className="fade-in-up delay-3">
         <p>© {new Date().getFullYear()} {portfolioData.name}. Built with React.</p>
