@@ -15,15 +15,18 @@ function App() {
     return () => clearInterval(timerId);
   }, []);
 
-  // 🌟 NEW: SCROLL ANIMATION OBSERVER
+  // 🌟 CONTINUOUS SCROLL ANIMATION OBSERVER
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('show-scroll');
+        } else {
+          // 🌟 THIS LINE RESETS THE ANIMATION SO IT PLAYS AGAIN
+          entry.target.classList.remove('show-scroll');
         }
       });
-    });
+    }, { threshold: 0.15 }); // Waits until 15% of the element is visible before animating
 
     // Find everything with the 'hidden-scroll' class and watch it
     const hiddenElements = document.querySelectorAll('.hidden-scroll');

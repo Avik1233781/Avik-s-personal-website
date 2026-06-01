@@ -17,23 +17,6 @@ body {
     min-height: 100vh;
     position: relative;
 }
-/* 🌟 SCROLL ANIMATIONS */
-.hidden-scroll {
-    opacity: 0;
-    transform: translateY(40px); /* Starts pushed down */
-    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.show-scroll {
-    opacity: 1;
-    transform: translateY(0); /* Snaps into place */
-}
-
-/* Optional: Staggers the cards so they slide in one after another */
-.project-card:nth-child(1) { transition-delay: 0s; }
-.project-card:nth-child(2) { transition-delay: 0.15s; }
-.project-card:nth-child(3) { transition-delay: 0.3s; }
-.project-card:nth-child(4) { transition-delay: 0.45s; }
 
 /* Fixed background image that stays glued while you scroll */
 body::before {
@@ -65,23 +48,6 @@ body::before {
     position: relative;
     z-index: 1;
 }
-/* 🌟 SCROLL ANIMATIONS */
-.hidden-scroll {
-    opacity: 0;
-    transform: translateY(40px); /* Starts pushed down */
-    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.show-scroll {
-    opacity: 1;
-    transform: translateY(0); /* Snaps into place */
-}
-
-/* Optional: Staggers the cards so they slide in one after another */
-.project-card:nth-child(1) { transition-delay: 0s; }
-.project-card:nth-child(2) { transition-delay: 0.15s; }
-.project-card:nth-child(3) { transition-delay: 0.3s; }
-.project-card:nth-child(4) { transition-delay: 0.45s; }
 
 /* 2. BASE ANIMATIONS */
 @keyframes floatBob {
@@ -112,23 +78,7 @@ body::before {
     padding-bottom: 2rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-/* 🌟 SCROLL ANIMATIONS */
-.hidden-scroll {
-    opacity: 0;
-    transform: translateY(40px); /* Starts pushed down */
-    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
 
-.show-scroll {
-    opacity: 1;
-    transform: translateY(0); /* Snaps into place */
-}
-
-/* Optional: Staggers the cards so they slide in one after another */
-.project-card:nth-child(1) { transition-delay: 0s; }
-.project-card:nth-child(2) { transition-delay: 0.15s; }
-.project-card:nth-child(3) { transition-delay: 0.3s; }
-.project-card:nth-child(4) { transition-delay: 0.45s; }
 .profile-container {
     position: relative;
     display: flex; 
@@ -195,7 +145,20 @@ h1 {
     text-shadow: 0 0 10px rgba(100, 255, 218, 0.4);
 }
 
-/* Container Layout */
+h2 {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.bio-text {
+    max-width: 600px;
+    margin: 1rem auto;
+    color: #cbd5e1;
+}
+
+/* 4. DUAL CLOCK DISPLAY */
 .dual-clock-container {
     display: flex;
     flex-direction: column;
@@ -248,62 +211,15 @@ h1 {
 .sec-hand { width: 2px; height: 65px; margin-left: -1px; background: #64ffda; z-index: 3; }
 
 .clock-center {
-    position: absolute; top: 50%; left: 50%; width: 12px; height: 12px;
-    background: #64ffda; border-radius: 50%; transform: translate(-50%, -50%);
-    box-shadow: 0 0 10px rgba(100, 255, 218, 0.8); z-index: 4;
-}
-
-/* Hidden Catchy Message */
-.catchy-message {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, 20px) scale(0.5);
-    opacity: 0;
-    background: rgba(15, 23, 42, 0.95);
-    border: 2px solid #ff007f;
-    color: #ff007f;
-    padding: 0.8rem 1.5rem;
-    border-radius: 30px;
-    font-weight: 900;
-    font-size: 1.1rem;
-    white-space: nowrap;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5), 0 0 15px rgba(255, 0, 127, 0.4);
-    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    pointer-events: none;
-    z-index: 60;
-}
-
-/* 🌟 Show Message Animation */
-.catchy-message.show-message {
-    transform: translate(-50%, 80px) scale(1);
-    opacity: 1;
-}
-
-.hand {
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    transform-origin: bottom center;
-    background: #e2e8f0;
-    border-radius: 10px;
-    transition: transform 0.05s cubic-bezier(0.4, 2.08, 0.55, 0.44);
-}
-
-.hour-hand { width: 6px; height: 40px; margin-left: -3px; z-index: 1; }
-.min-hand { width: 4px; height: 55px; margin-left: -2px; z-index: 2; }
-.sec-hand { width: 2px; height: 65px; margin-left: -1px; background: #64ffda; z-index: 3; }
-
-.clock-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 12px;
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    width: 12px; 
     height: 12px;
-    background: #64ffda;
-    border-radius: 50%;
+    background: #64ffda; 
+    border-radius: 50%; 
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 10px rgba(100, 255, 218, 0.8);
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.8); 
     z-index: 4;
 }
 
@@ -320,15 +236,6 @@ h1 {
     animation: neonPulse 2s infinite alternate;
 }
 
-/* The New Date Styling */
-#live-date {
-    font-size: 0.85rem;
-    color: #64ffda;
-    margin-top: 4px;
-    letter-spacing: 1px;
-    font-weight: 500;
-}
-
 @keyframes neonPulse {
     from { box-shadow: 0 0 5px rgba(100, 255, 218, 0.2), inset 0 0 5px rgba(100, 255, 218, 0.1); }
     to { box-shadow: 0 0 25px rgba(100, 255, 218, 0.8), inset 0 0 15px rgba(100, 255, 218, 0.5); }
@@ -341,66 +248,22 @@ h1 {
     font-weight: bold;
     letter-spacing: 2px;
 }
+
 /* 🌟 THE DATE STYLING */
-        #live-date {
-            font-size: 0.85rem;
-            color: #64ffda;
-            margin-top: 4px;
-            letter-spacing: 1px;
-            font-weight: 500;
-        }
-        
-h2 {
-    font-size: 1.2rem;
-    color: #94a3b8;
-    margin-bottom: 1.5rem;
+#live-date {
+    font-size: 0.85rem;
+    color: #64ffda;
+    margin-top: 4px;
+    letter-spacing: 1px;
     font-weight: 500;
 }
 
-.bio-text {
-    max-width: 600px;
-    margin: 1rem auto;
-    color: #cbd5e1;
-}
-/* 🌟 SCROLL ANIMATIONS */
-.hidden-scroll {
-    opacity: 0;
-    transform: translateY(40px); /* Starts pushed down */
-    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.show-scroll {
-    opacity: 1;
-    transform: translateY(0); /* Snaps into place */
-}
-
-/* Optional: Staggers the cards so they slide in one after another */
-.project-card:nth-child(1) { transition-delay: 0s; }
-.project-card:nth-child(2) { transition-delay: 0.15s; }
-.project-card:nth-child(3) { transition-delay: 0.3s; }
-.project-card:nth-child(4) { transition-delay: 0.45s; }
 /* 5. CHROME TAB LINKS (Glassmorphism) */
 .links-section {
     text-align: center;
     margin-bottom: 4rem;
 }
-/* 🌟 SCROLL ANIMATIONS */
-.hidden-scroll {
-    opacity: 0;
-    transform: translateY(40px); /* Starts pushed down */
-    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
 
-.show-scroll {
-    opacity: 1;
-    transform: translateY(0); /* Snaps into place */
-}
-
-/* Optional: Staggers the cards so they slide in one after another */
-.project-card:nth-child(1) { transition-delay: 0s; }
-.project-card:nth-child(2) { transition-delay: 0.15s; }
-.project-card:nth-child(3) { transition-delay: 0.3s; }
-.project-card:nth-child(4) { transition-delay: 0.45s; }
 .button-group {
     display: flex;
     justify-content: center;
@@ -408,23 +271,7 @@ h2 {
     flex-wrap: wrap;
     margin-top: 1.5rem;
 }
-/* 🌟 SCROLL ANIMATIONS */
-.hidden-scroll {
-    opacity: 0;
-    transform: translateY(40px); /* Starts pushed down */
-    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
 
-.show-scroll {
-    opacity: 1;
-    transform: translateY(0); /* Snaps into place */
-}
-
-/* Optional: Staggers the cards so they slide in one after another */
-.project-card:nth-child(1) { transition-delay: 0s; }
-.project-card:nth-child(2) { transition-delay: 0.15s; }
-.project-card:nth-child(3) { transition-delay: 0.3s; }
-.project-card:nth-child(4) { transition-delay: 0.45s; }
 .link-button {
     display: inline-block;
     padding: 1rem 3rem;
@@ -455,161 +302,48 @@ h2 {
     margin-bottom: 2rem;
     text-align: center;
 }
-/* 🌟 SCROLL ANIMATIONS */
-.hidden-scroll {
-    opacity: 0;
-    transform: translateY(40px); /* Starts pushed down */
-    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
 
-.show-scroll {
-    opacity: 1;
-    transform: translateY(0); /* Snaps into place */
-}
-
-/* Optional: Staggers the cards so they slide in one after another */
-.project-card:nth-child(1) { transition-delay: 0s; }
-.project-card:nth-child(2) { transition-delay: 0.15s; }
-.project-card:nth-child(3) { transition-delay: 0.3s; }
-.project-card:nth-child(4) { transition-delay: 0.45s; }
-
-/* 1. OVERWRITE YOUR GRID CSS WITH THIS */
 .project-grid {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important; /* Forces exactly 2 columns */
+    grid-template-columns: repeat(2, 1fr) !important; 
     gap: 1.5rem;
     width: 100%;
 }
-/* 🌟 SCROLL ANIMATIONS */
-.hidden-scroll {
-    opacity: 0;
-    transform: translateY(40px); /* Starts pushed down */
-    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
 
-.show-scroll {
-    opacity: 1;
-    transform: translateY(0); /* Snaps into place */
-}
-
-/* Optional: Staggers the cards so they slide in one after another */
-.project-card:nth-child(1) { transition-delay: 0s; }
-.project-card:nth-child(2) { transition-delay: 0.15s; }
-.project-card:nth-child(3) { transition-delay: 0.3s; }
-.project-card:nth-child(4) { transition-delay: 0.45s; }
 .project-card {
-    grid-column: span 1 !important; /* Forces every card to stay in 1 box */
+    grid-column: span 1 !important; 
     width: 100% !important;
     background: rgba(30, 41, 59, 0.6); 
     padding: 1.5rem; 
     border-radius: 10px; 
-}
-/* 🌟 SCROLL ANIMATIONS */
-.hidden-scroll {
-    opacity: 0;
-    transform: translateY(40px); /* Starts pushed down */
-    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition: all 0.4s ease;
 }
 
-.show-scroll {
-    opacity: 1;
-    transform: translateY(0); /* Snaps into place */
-}
-
-/* Optional: Staggers the cards so they slide in one after another */
-.project-card:nth-child(1) { transition-delay: 0s; }
-.project-card:nth-child(2) { transition-delay: 0.15s; }
-.project-card:nth-child(3) { transition-delay: 0.3s; }
-.project-card:nth-child(4) { transition-delay: 0.45s; }
 .project-card:hover {
     transform: translateY(-8px);
     border-color: #64ffda;
     box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(100, 255, 218, 0.1);
     background: rgba(35, 49, 71, 0.8);
 }
-/* 🌟 SCROLL ANIMATIONS */
-.hidden-scroll {
-    opacity: 0;
-    transform: translateY(40px); /* Starts pushed down */
-    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
 
-.show-scroll {
-    opacity: 1;
-    transform: translateY(0); /* Snaps into place */
-}
-
-/* Optional: Staggers the cards so they slide in one after another */
-.project-card:nth-child(1) { transition-delay: 0s; }
-.project-card:nth-child(2) { transition-delay: 0.15s; }
-.project-card:nth-child(3) { transition-delay: 0.3s; }
-.project-card:nth-child(4) { transition-delay: 0.45s; }
 .project-card h4 {
     color: #64ffda;
     font-size: 0.9rem;
     margin-bottom: 1rem;
 }
-/* 🌟 SCROLL ANIMATIONS */
-.hidden-scroll {
-    opacity: 0;
-    transform: translateY(40px); /* Starts pushed down */
-    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
 
-.show-scroll {
-    opacity: 1;
-    transform: translateY(0); /* Snaps into place */
-}
-
-/* Optional: Staggers the cards so they slide in one after another */
-.project-card:nth-child(1) { transition-delay: 0s; }
-.project-card:nth-child(2) { transition-delay: 0.15s; }
-.project-card:nth-child(3) { transition-delay: 0.3s; }
-.project-card:nth-child(4) { transition-delay: 0.45s; }
 .project-title {
     color: #f8fafc;
     font-size: 1.2rem;
     margin-bottom: 0.8rem;
 }
-/* 🌟 SCROLL ANIMATIONS */
-.hidden-scroll {
-    opacity: 0;
-    transform: translateY(40px); /* Starts pushed down */
-    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
 
-.show-scroll {
-    opacity: 1;
-    transform: translateY(0); /* Snaps into place */
-}
-
-/* Optional: Staggers the cards so they slide in one after another */
-.project-card:nth-child(1) { transition-delay: 0s; }
-.project-card:nth-child(2) { transition-delay: 0.15s; }
-.project-card:nth-child(3) { transition-delay: 0.3s; }
-.project-card:nth-child(4) { transition-delay: 0.45s; }
 .project-desc {
     font-size: 0.95rem;
     color: #94a3b8;
     margin-bottom: 1.5rem;
 }
-/* 🌟 SCROLL ANIMATIONS */
-.hidden-scroll {
-    opacity: 0;
-    transform: translateY(40px); /* Starts pushed down */
-    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
 
-.show-scroll {
-    opacity: 1;
-    transform: translateY(0); /* Snaps into place */
-}
-
-/* Optional: Staggers the cards so they slide in one after another */
-.project-card:nth-child(1) { transition-delay: 0s; }
-.project-card:nth-child(2) { transition-delay: 0.15s; }
-.project-card:nth-child(3) { transition-delay: 0.3s; }
-.project-card:nth-child(4) { transition-delay: 0.45s; }
 .project-link {
     color: #cbd5e1;
     text-decoration: none;
@@ -628,3 +362,31 @@ footer {
     font-size: 0.85rem;
 }
 
+/* 🌟 SCROLL ANIMATIONS (Cleaned up!) */
+.hidden-scroll {
+    opacity: 0;
+    transform: translateY(40px); /* Starts pushed down */
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.show-scroll {
+    opacity: 1;
+    transform: translateY(0); /* Snaps into place */
+}
+
+/* Staggers the cards so they slide in one after another */
+.project-card:nth-child(1) { transition-delay: 0s; }
+.project-card:nth-child(2) { transition-delay: 0.15s; }
+.project-card:nth-child(3) { transition-delay: 0.3s; }
+.project-card:nth-child(4) { transition-delay: 0.45s; }
+
+/* 📱 MOBILE RESPONSIVE STYLES */
+@media screen and (max-width: 768px) {
+    .portfolio-container { padding: 2rem 1rem; }
+    .button-group { flex-direction: row; gap: 0; } 
+    .link-button { 
+        width: 100%; border-radius: 8px 8px 0 0; border-bottom: none;
+        flex: 1; text-align: center; padding: 0.8rem 0.2rem; font-size: 0.8rem;
+    }
+    .project-grid { grid-template-columns: 1fr !important; }
+}

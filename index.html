@@ -382,14 +382,17 @@
         updateClock();
         setInterval(updateClock, 1000);
 
-        // 🌟 4. SCROLL ANIMATIONS OBSERVER (NEW JS)
+        // 🌟 4. SCROLL ANIMATIONS OBSERVER (MODIFIED TO RESET)
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('show-scroll');
+                } else {
+                    // THIS ELSE BLOCK RESETS THE ANIMATION EVERY TIME YOU SCROLL PAST
+                    entry.target.classList.remove('show-scroll');
                 }
             });
-        });
+        }, { threshold: 0.15 });
 
         // Grab everything with the 'hidden-scroll' class and watch it
         const hiddenElements = document.querySelectorAll('.hidden-scroll');
