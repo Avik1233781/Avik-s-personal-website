@@ -295,11 +295,11 @@ h2 {
     text-align: center;
 }
 
-/* Add this to force the grid to stay as 2 columns */
+
 .project-grid {
     display: grid;
     /* This line forces exactly 2 columns of equal width */
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(2, 250px); 
     gap: 1.5rem;
     
 }
