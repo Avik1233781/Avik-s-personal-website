@@ -296,22 +296,20 @@ h2 {
 }
 
 
+/* 1. OVERWRITE YOUR GRID CSS WITH THIS */
 .project-grid {
-    display: grid;
-    /* This line forces exactly 2 columns of equal width */
-    grid-template-columns: repeat(2, 250px); 
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* Forces exactly 2 columns */
     gap: 1.5rem;
-    
+    width: 100%;
 }
 
-
 .project-card {
-    background: rgba(30, 41, 59, 0.5);
-    backdrop-filter: blur(10px);
-    padding: 2rem;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.4s ease;
+    grid-column: span 1 !important; /* Forces every card to stay in 1 box */
+    width: 100% !important;
+    background: rgba(30, 41, 59, 0.6); 
+    padding: 1.5rem; 
+    border-radius: 10px; 
 }
 
 .project-card:hover {
