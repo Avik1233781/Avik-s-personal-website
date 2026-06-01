@@ -86,9 +86,9 @@ links: [
       {
         id: 3,
         category: "💻 Software & Code",
-        title: "Python Data Analysis",
-        description: "Scripts utilized for processing biological data and rendering visualizations.",
-        link: "#"
+        title: "Simple chatbot using python",
+        description: "A simple chatbot implemented in Python to demonstrate basic natural language processing concepts.",
+        link: "https://github.com/Avik1233781/Welcome-To-Avik-Makal-s-Chatbot"
       }
     ]
   };
