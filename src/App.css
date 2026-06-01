@@ -307,15 +307,26 @@ h1 {
     z-index: 4;
 }
 
-/* Digital Clock Styling */
+/* Digital Clock & Date Styling */
 .clock-wrapper {
-    display: inline-block;
-    padding: 0.8rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.8rem 2rem; 
     background: rgba(15, 23, 42, 0.6);
-    border-radius: 50px;
+    border-radius: 50px; 
     border: 2px solid #64ffda;
     box-shadow: 0 0 15px rgba(100, 255, 218, 0.3), inset 0 0 10px rgba(100, 255, 218, 0.2);
     animation: neonPulse 2s infinite alternate;
+}
+
+/* The New Date Styling */
+#live-date {
+    font-size: 0.85rem;
+    color: #64ffda;
+    margin-top: 4px;
+    letter-spacing: 1px;
+    font-weight: 500;
 }
 
 @keyframes neonPulse {

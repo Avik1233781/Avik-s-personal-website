@@ -261,10 +261,10 @@
       ⏳ Hurry up! Time is ticking! 🚀
     </div>
   </div>
-                <div class="clock-wrapper">
-                    <div id="live-clock">Loading...</div>
-                </div>
-            </div>
+  <div class="clock-wrapper">
+    <div id="live-clock">Loading...</div>
+    <div id="live-date"></div>
+</div>
             
             <h2>B.Sc Life Sciences | Digital Artist | Developer</h2>
             <p class="bio-text">Welcome to my digital space. I am passionate about the intersection of biology, technology, and art. From studying enzymology at Ramakrishna Mission Residential College to creating frame-by-frame animations, this is where I share my work.</p>
@@ -354,7 +354,7 @@
         const minHand = document.querySelector('.min-hand');
         const secHand = document.querySelector('.sec-hand');
         const digitalClock = document.getElementById('live-clock');
-
+        const liveDate = document.getElementById('live-date');
         function updateClock() {
             const now = new Date();
 
