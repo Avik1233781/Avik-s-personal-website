@@ -295,10 +295,16 @@ h2 {
     text-align: center;
 }
 
+/* Add this to force the grid to stay as 2 columns */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); 
     gap: 1.8rem;
+}
+
+/* Ensure no card accidentally stretches */
+.project-card {
+    grid-column: span 1; /* Ensures every card only takes up 1 slot */
 }
 
 .project-card {
