@@ -144,7 +144,27 @@ h1 {
     color: #64ffda;
     text-shadow: 0 0 10px rgba(100, 255, 218, 0.4);
 }
+/* 🌟 TITLE TYPING ANIMATION */
+        .typing-container {
+            display: inline-block;
+            overflow: hidden; /* Hides the text before it's typed */
+            white-space: nowrap; /* Keeps it on one line */
+            border-right: 4px solid #64ffda; /* The glowing cursor */
+            /* Adjust '2.5s' to make the typing faster or slower */
+            animation: typing 2.5s steps(30, end) forwards, blink 0.8s step-end infinite;
+            max-width: fit-content;
+            margin: 0 auto 0.5rem auto;
+        }
 
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: #64ffda; }
+        }
 h2 {
     font-size: 1.2rem;
     color: #94a3b8;
@@ -381,27 +401,6 @@ footer {
 .project-card:nth-child(3) { transition-delay: 0.3s; }
 .project-card:nth-child(4) { transition-delay: 0.45s; }
 
-/* 🌟 TITLE TYPING ANIMATION */
-        .typing-container {
-            display: inline-block;
-            overflow: hidden; /* Hides the text before it's typed */
-            white-space: nowrap; /* Keeps it on one line */
-            border-right: 4px solid #64ffda; /* The glowing cursor */
-            /* Adjust '2.5s' to make the typing faster or slower */
-            animation: typing 2.5s steps(30, end) forwards, blink 0.8s step-end infinite;
-            max-width: fit-content;
-            margin: 0 auto 0.5rem auto;
-        }
-
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-
-        @keyframes blink {
-            from, to { border-color: transparent; }
-            50% { border-color: #64ffda; }
-        }
 
 
 /* 📱 MOBILE RESPONSIVE STYLES */
