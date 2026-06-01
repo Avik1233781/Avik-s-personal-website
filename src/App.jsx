@@ -172,20 +172,19 @@ links: [
 
       {/* PROJECTS SECTION */}
       <section className="projects-section fade-in-up delay-2">
-  <h3>My Projects</h3>
+  <h3>My Work</h3>
   <div className="project-grid">
     
-    {/* Project 1 */}
+    {/* All your project cards MUST be inside this div */}
+    <div className="project-card">...</div>
+    <div className="project-card">...</div>
     <div className="project-card">...</div>
     
-    {/* Project 2 */}
-    <div className="project-card">...</div>
-    
-    {/* Project 3 */}
-    <div className="project-card">...</div>
-    
-    {/* Project 4 */}
-    <div className="project-card">...</div>
+    {/* Desmos Card must be here too! */}
+    <div className="project-card">
+        <h4>Desmos Anime Art</h4>
+        <p>...</p>
+    </div>
 
   </div>
 </section>

@@ -298,14 +298,12 @@ h2 {
 /* Add this to force the grid to stay as 2 columns */
 .project-grid {
     display: grid;
+    /* This line forces exactly 2 columns of equal width */
     grid-template-columns: repeat(2, 1fr); 
-    gap: 1.8rem;
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
-/* Ensure no card accidentally stretches */
-.project-card {
-    grid-column: span 1; /* Ensures every card only takes up 1 slot */
-}
 
 .project-card {
     background: rgba(30, 41, 59, 0.5);
