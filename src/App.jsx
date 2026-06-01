@@ -173,20 +173,19 @@ links: [
       {/* PROJECTS SECTION */}
       <section className="projects-section fade-in-up delay-2">
   <h3>My Work</h3>
-  <div className="project-grid">
-    
-    {/* All your project cards MUST be inside this div */}
-    <div className="project-card">...</div>
-    <div className="project-card">...</div>
-    <div className="project-card">...</div>
-    
-    {/* Desmos Card must be here too! */}
-    <div className="project-card">
-        <h4>Desmos Anime Art</h4>
-        <p>...</p>
-    </div>
-
-  </div>
+  // --- CORRECT STRUCTURE ---
+<div className="project-grid">
+   <div className="project-card">Enzymology...</div>
+   <div className="project-card">Music Video...</div>
+   <div className="project-card">Chatbot...</div>
+   
+   {/* PASTE THE DESMOS CARD CODE HERE, INSIDE THE DIV */}
+   <div className="project-card">
+       <h4>Desmos Anime Art</h4>
+       <p>...</p>
+       <a href="...">View Projects</a>
+   </div>
+</div>
 </section>
 
       <footer className="fade-in-up delay-3">

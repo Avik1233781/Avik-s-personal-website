@@ -301,7 +301,7 @@ h2 {
     /* This line forces exactly 2 columns of equal width */
     grid-template-columns: repeat(2, 1fr); 
     gap: 1.5rem;
-    margin-top: 2rem;
+    
 }
 
 
