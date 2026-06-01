@@ -66,7 +66,11 @@ links: [
   { 
   id: 4, 
   label: "Instagram", 
-  url: "https://www.instagram.com/i_am_avik_001_/" }
+  url: "https://www.instagram.com/i_am_avik_001_/" },
+  { 
+  id: 5, 
+  label: "Desmos", 
+  url: "https://www.desmos.com/calculator"}
 ],
     projects: [
       {
@@ -89,6 +93,14 @@ links: [
         title: "Simple chatbot using python",
         description: "A simple chatbot implemented in Python to demonstrate basic natural language processing concepts.",
         link: "https://github.com/Avik1233781/Welcome-To-Avik-Makal-s-Chatbot"
+      },
+      
+      {
+        id: 4,
+        category: "🖌️Desmos Anime Art",
+        title: "Desmos Art Alya Draw",
+        description: "Creative mathematical anime art created using Desmos graphing calculator.",
+        link: "https://www.desmos.com/calculator/0ljjyncaqv"
       }
     ]
   };
