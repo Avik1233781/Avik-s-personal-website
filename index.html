@@ -203,6 +203,24 @@
         .project-card:hover .project-link { color: #64ffda; }
         footer { text-align: center; margin-top: 5rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #64748b; font-size: 0.85rem; }
 
+        /* 🌟 SCROLL ANIMATIONS (NEW CSS) */
+        .hidden-scroll {
+            opacity: 0;
+            transform: translateY(40px); /* Starts pushed down */
+            transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .show-scroll {
+            opacity: 1;
+            transform: translateY(0); /* Snaps into place */
+        }
+
+        /* Stagger the cards so they slide in one after another */
+        .project-card:nth-child(1) { transition-delay: 0s; }
+        .project-card:nth-child(2) { transition-delay: 0.15s; }
+        .project-card:nth-child(3) { transition-delay: 0.3s; }
+        .project-card:nth-child(4) { transition-delay: 0.45s; }
+
         @media screen and (max-width: 768px) {
             .portfolio-container { padding: 2rem 1rem; }
             .button-group { flex-direction: row; gap: 0; } 
@@ -253,7 +271,7 @@
         </header>
 
         <section class="links-section">
-            <h3>My Quick Links</h3>
+            <h3 class="hidden-scroll">My Quick Links</h3>
             <div class="button-group">
                 <a href="https://github.com/Avik1233781" target="_blank" class="link-button">GitHub</a>
                 <a href="https://linkedin.com/in/yourusername" target="_blank" class="link-button">LinkedIn</a>
@@ -264,27 +282,27 @@
         </section>
 
         <section class="projects-section">
-            <h3>My Work</h3>
+            <h3 class="hidden-scroll">My Work</h3>
             <div class="project-grid">
-                <div class="project-card">
+                <div class="project-card hidden-scroll">
                     <h4>🔬 Academic Research</h4>
                     <p class="project-title"><strong>Enzymology & Acid Phosphatase</strong></p>
                     <p class="project-desc">A detailed study on enzyme kinetics, analyzing reaction rates and catalytic efficiency.</p>
                     <a href="#" class="project-link">View Project</a>
                 </div>
-                <div class="project-card">
+                <div class="project-card hidden-scroll">
                     <h4>🎬 Creative Works</h4>
                     <p class="project-title"><strong>"Tout Donner" Music Video</strong></p>
                     <p class="project-desc">A frame-by-frame animation project showcasing digital art and video editing skills.</p>
                     <a href="https://www.instagram.com/p/DUr7CcUEqEV/" class="project-link">Watch Video</a>
                 </div>
-                <div class="project-card">
+                <div class="project-card hidden-scroll">
                     <h4>💻 Software & Code</h4>
                     <p class="project-title"><strong>Simple chatbot using python</strong></p>
                     <p class="project-desc">A simple chatbot implemented in Python to demonstrate basic natural language processing concepts.</p>
                     <a href="https://github.com/Avik1233781/Welcome-To-Avik-Makal-s-Chatbot" class="project-link">View Code</a>
                 </div>
-                <div class="project-card">
+                <div class="project-card hidden-scroll">
                     <h4>🖌️Desmos Anime Art</h4>
                     <p class="project-title"><strong>Desmos Art Alya Draw</strong></p>
                     <p class="project-desc">Creative mathematical anime art created using Desmos graphing calculator.</p>
@@ -317,9 +335,9 @@
             }, 3000); 
         });
 
-        // 2. NEW CLOCK CLICK ANIMATION
-        const analogClockElement = document.getElementById('my-analog-clock');
-        const clockMsg = document.getElementById('clock-catchy-msg');
+        // 2. NEW CLOCK CLICK ANIMATION (Fixed ID to match your HTML)
+        const analogClockElement = document.getElementById('interactive-analog-clock');
+        const clockMsg = document.getElementById('clock-message');
 
         analogClockElement.addEventListener('click', () => {
             analogClockElement.classList.add('zoom-effect');
@@ -362,6 +380,19 @@
 
         updateClock();
         setInterval(updateClock, 1000);
+
+        // 🌟 4. SCROLL ANIMATIONS OBSERVER (NEW JS)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show-scroll');
+                }
+            });
+        });
+
+        // Grab everything with the 'hidden-scroll' class and watch it
+        const hiddenElements = document.querySelectorAll('.hidden-scroll');
+        hiddenElements.forEach((el) => observer.observe(el));
     </script>
 </body>
 </html>

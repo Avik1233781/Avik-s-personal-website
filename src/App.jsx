@@ -15,6 +15,26 @@ function App() {
     return () => clearInterval(timerId);
   }, []);
 
+  // 🌟 NEW: SCROLL ANIMATION OBSERVER
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show-scroll');
+        }
+      });
+    });
+
+    // Find everything with the 'hidden-scroll' class and watch it
+    const hiddenElements = document.querySelectorAll('.hidden-scroll');
+    hiddenElements.forEach((el) => observer.observe(el));
+
+    // Cleanup watcher when component unmounts
+    return () => {
+      hiddenElements.forEach((el) => observer.unobserve(el));
+    };
+  }, []); // Empty array means this runs exactly once when the site loads
+
   // Formats the digital clock
   const formatTime = (date) => {
     let hours = date.getHours();
@@ -55,23 +75,26 @@ function App() {
     name: "Avik Makal",
     role: "B.Sc Life Sciences | Digital Artist | Developer",
     bio: "Welcome to my digital space. I am passionate about the intersection of biology, technology, and art. From studying enzymology at Ramakrishna Mission Residential College to creating frame-by-frame animations, this is where I share my work.",
-    // In App.jsx
-links: [
-  { id: 1, label: "Code", url: "https://github.com/Avik1233781" }, 
-  { id: 2, label: "Work", url: "https://linkedin.com/in/yourusername" }, 
-  { 
-  id: 3, 
-  label: "Email Me", 
-  url: "https://mail.google.com/mail/?view=cm&fs=1&to=tanusreemakal6@gmail.com"},
-  { 
-  id: 4, 
-  label: "Instagram", 
-  url: "https://www.instagram.com/i_am_avik_001_/" },
-  { 
-  id: 5, 
-  label: "Desmos", 
-  url: "https://www.desmos.com/calculator"}
-],
+    
+    links: [
+      { id: 1, label: "Code", url: "https://github.com/Avik1233781" }, 
+      { id: 2, label: "Work", url: "https://linkedin.com/in/yourusername" }, 
+      { 
+        id: 3, 
+        label: "Email Me", 
+        url: "https://mail.google.com/mail/?view=cm&fs=1&to=tanusreemakal6@gmail.com"
+      },
+      { 
+        id: 4, 
+        label: "Instagram", 
+        url: "https://www.instagram.com/i_am_avik_001_/" 
+      },
+      { 
+        id: 5, 
+        label: "Desmos", 
+        url: "https://www.desmos.com/calculator"
+      }
+    ],
     projects: [
       {
         id: 1,
@@ -159,7 +182,8 @@ links: [
 
       {/* CHROME TAB LINKS SECTION */}
       <section className="links-section fade-in-up delay-1">
-        <h3>My Quick Links</h3>
+        {/* 🌟 ADDED className="hidden-scroll" */}
+        <h3 className="hidden-scroll">My Quick Links</h3>
         <div className="button-group">
           {portfolioData.links.map((link) => (
             <a key={link.id} href={link.url} target="_blank" rel="noreferrer" className="link-button">
@@ -169,10 +193,10 @@ links: [
         </div>
       </section>
 
-      
-{/* PROJECTS SECTION - WITH FORCED INLINE CSS */}
+      {/* PROJECTS SECTION - WITH FORCED INLINE CSS */}
       <section className="projects-section fade-in-up delay-2">
-        <h3 style={{ textAlign: 'center', marginBottom: '2rem' }}>My Work</h3>
+        {/* 🌟 ADDED className="hidden-scroll" */}
+        <h3 className="hidden-scroll" style={{ textAlign: 'center', marginBottom: '2rem' }}>My Work</h3>
         
         {/* THIS INLINE STYLE FORCES THE 2 COLUMNS NO MATTER WHAT */}
         <div 
@@ -186,7 +210,7 @@ links: [
         >
           {portfolioData.projects.map((project) => (
             <div 
-              className="project-card" 
+              className="project-card hidden-scroll" /* 🌟 ADDED 'hidden-scroll' HERE */
               key={project.id}
               style={{
                 backgroundColor: '#1e293b',
