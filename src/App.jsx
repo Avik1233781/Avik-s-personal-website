@@ -81,7 +81,7 @@ function App() {
     
     links: [
       { id: 1, label: "Code", url: "https://github.com/Avik1233781" }, 
-      { id: 2, label: "Work", url: "https://linkedin.com/in/yourusername" }, 
+      { id: 2, label: "Work", url: "https://www.linkedin.com/in/avik-makal-252438413/"}, 
       { 
         id: 3, 
         label: "Email Me", 
