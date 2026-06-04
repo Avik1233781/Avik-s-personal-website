@@ -150,9 +150,10 @@ function App() {
         </div>
 
        {/* 🌟 WRAPPED H1 IN TYPING CONTAINER */}
-<div style={{ display: 'flex', justifyContent: 'center' }}>
-  <h1 className="typing-container">Hello, I'm <span className="highlight-text">{portfolioData.name}</span></h1>
-</div>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          {/* Add hidden-scroll right next to typing-container */}
+          <h1 className="typing-container hidden-scroll">Hello, I'm <span className="highlight-text">{portfolioData.name}</span></h1>
+        </div>
         
         {/* DUAL CLOCK DISPLAY */}
         <div className="dual-clock-container">
