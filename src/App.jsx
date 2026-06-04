@@ -85,7 +85,7 @@ function App() {
       { 
         id: 3, 
         label: "Email Me", 
-        url: "https://mail.google.com/mail/?view=cm&fs=1&to=tanusreemakal6@gmail.com"
+        url: "https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=tanusreemakal6@gmail.com"
       },
       { 
         id: 4, 
@@ -266,3 +266,5 @@ function App() {
 }
 
 export default App;
+
+
