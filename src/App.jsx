@@ -126,6 +126,13 @@ function App() {
         title: "Desmos Art Alya Draw",
         description: "Creative mathematical anime art created using Desmos graphing calculator.",
         link: "https://www.desmos.com/calculator/0ljjyncaqv"
+      },
+      {
+        id: 5,
+        category: "🎉Birthday project",
+        title: "Simple Birthday Card",
+        description: "A simple interactive birthday card created with HTML, CSS, and JavaScript.",
+        link: "https://makal.netlify.app/"
       }
     ]
   };
