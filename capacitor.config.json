@@ -1,0 +1,6 @@
+{
+  "appId": "com.avik.portfolio",
+  "appName": "Avik Portfolio",
+  "webDir": "build",
+  "bundledWebRuntime": false
+}
